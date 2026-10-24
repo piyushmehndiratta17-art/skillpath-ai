@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DailyTask } from '@/lib/types';
 import { CheckCircle2, Circle, Zap, Target, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -16,6 +16,12 @@ export default function DailyTasksWidget({
   onTaskCompleted,
 }: DailyTasksWidgetProps) {
   const [tasks, setTasks] = useState<DailyTask[]>(initialTasks);
+
+  useEffect(() => {
+    if (initialTasks && initialTasks.length > 0) {
+      setTasks(initialTasks);
+    }
+  }, [initialTasks]);
 
   const toggleTask = (taskId: string) => {
     const nextTasks = tasks.map((t) => {

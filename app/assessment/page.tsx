@@ -382,15 +382,18 @@ export default function AssessmentPage() {
 
                 <div className="flex gap-1.5">
                   {questions.map((_, i) => (
-                    <div
+                    <button
                       key={i}
+                      type="button"
+                      onClick={() => setCurrentQuestionIdx(i)}
+                      title={`Go to question ${i + 1}`}
                       className={cn(
-                        'w-7 h-1.5 rounded-full transition-colors',
+                        'w-7 h-2 rounded-full transition-all cursor-pointer',
                         i === currentQuestionIdx
-                          ? 'bg-brand-600'
+                          ? 'bg-brand-600 ring-2 ring-brand-300'
                           : answers[questions[i]?.id] !== undefined
-                          ? 'bg-emerald-400'
-                          : 'bg-slate-200'
+                          ? 'bg-emerald-400 hover:bg-emerald-500'
+                          : 'bg-slate-200 hover:bg-slate-300'
                       )}
                     />
                   ))}

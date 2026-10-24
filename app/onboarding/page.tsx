@@ -57,6 +57,14 @@ export default function OnboardingPage() {
           <p className="mt-5 text-center text-xs text-slate-400">
             No account required · All data stays on your device · Completely free
           </p>
+
+          {/* Diagnostic Assessment alternative */}
+          <div className="mt-3 p-3 rounded-xl bg-brand-50/60 border border-brand-200/80 text-center text-xs text-brand-800">
+            Unsure of your exact starting level?{' '}
+            <Link href="/assessment" className="font-bold underline hover:text-brand-900">
+              Take the Diagnostic Skill Assessment →
+            </Link>
+          </div>
         </div>
       </main>
     </div>

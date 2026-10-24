@@ -253,13 +253,18 @@ function LessonContentInner() {
     setStats(loadStats());
   }, []);
 
+  const paramLessonId = searchParams.get('id');
+  const paramMilestoneId = searchParams.get('milestone');
+
+  // Reset completed banner when navigating to a new lesson
+  useEffect(() => {
+    setCompletedState(null);
+  }, [paramLessonId]);
+
   if (!mounted) return null;
 
   // Determine current lesson id
   const next = roadmap ? nextLesson(roadmap) : null;
-  const paramLessonId = searchParams.get('id');
-  const paramMilestoneId = searchParams.get('milestone');
-
   const activeLessonId = paramLessonId || next?.lesson.id || 'l1-3';
   const content: DetailedLessonContent = getLessonContent(activeLessonId, roadmap);
 
@@ -275,14 +280,12 @@ function LessonContentInner() {
   if (roadmap) {
     const flatLessons: { lessonId: string; milestoneId: string }[] = [];
     for (const m of roadmap.milestones) {
-      if (paramMilestoneId ? m.id === paramMilestoneId : m.lessons.some((l) => l.id === activeLessonId)) {
+      const idx = m.lessons.findIndex((l) => l.id === activeLessonId);
+      if (idx !== -1) {
         currentMilestone = m;
         totalLessonsInMilestone = m.lessons.length;
-        const idx = m.lessons.findIndex((l) => l.id === activeLessonId);
-        if (idx !== -1) {
-          lessonIndexInMilestone = idx + 1;
-          isAlreadyCompleted = m.lessons[idx].completed;
-        }
+        lessonIndexInMilestone = idx + 1;
+        isAlreadyCompleted = m.lessons[idx].completed;
       }
       m.lessons.forEach((l) => {
         flatLessons.push({ lessonId: l.id, milestoneId: m.id });

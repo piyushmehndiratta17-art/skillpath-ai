@@ -224,8 +224,6 @@ export function completeLesson(lessonId: string, milestoneId?: string): Complete
   // Find the lesson and milestone
   for (let mIdx = 0; mIdx < updatedRoadmap.milestones.length; mIdx++) {
     const milestone = updatedRoadmap.milestones[mIdx];
-    if (milestoneId && milestone.id !== milestoneId) continue;
-
     const lIdx = milestone.lessons.findIndex((l) => l.id === lessonId);
     if (lIdx !== -1) {
       targetMilestoneIndex = mIdx;
