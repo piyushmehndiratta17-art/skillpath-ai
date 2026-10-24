@@ -1,0 +1,35 @@
+{
+  "description": "Example submissions supported by the assessment scoring engine.",
+  "mapFormatSubmission": {
+    "skill": "python",
+    "timeSpentSeconds": 142,
+    "answers": {
+      "py-q1": "b",
+      "py-q2": "b",
+      "py-q3": "b",
+      "py-q4": "b",
+      "py-q5": "d",
+      "py-q6": "b",
+      "py-q7": "b",
+      "py-q8": "a",
+      "py-q9": "b",
+      "py-q10": null
+    }
+  },
+  "arrayFormatSubmission": {
+    "skill": "javascript",
+    "timeSpentSeconds": 180,
+    "answers": [
+      { "questionId": "js-q1", "selectedOptionId": "b" },
+      { "questionId": "js-q2", "selectedOptionId": "c" },
+      { "questionId": "js-q3", "selectedOptionId": "a" },
+      { "questionId": "js-q4", "selectedOptionId": "b" },
+      { "questionId": "js-q5", "selectedOptionId": "b" },
+      { "questionId": "js-q6", "selectedOptionId": "a" },
+      { "questionId": "js-q7", "selectedOptionId": "b" },
+      { "questionId": "js-q8", "selectedOptionId": null },
+      { "questionId": "js-q9", "selectedOptionId": "b" },
+      { "questionId": "js-q10", "selectedOptionId": "b" }
+    ]
+  }
+}

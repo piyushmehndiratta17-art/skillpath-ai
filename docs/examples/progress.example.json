@@ -1,0 +1,30 @@
+{
+  "profile": {
+    "skill": "Python",
+    "level": "intermediate",
+    "goal": "Build automated data pipelines and backend web microservices",
+    "dailyMinutes": 30,
+    "createdAt": "2026-10-24T06:00:00.000Z"
+  },
+  "stats": {
+    "xp": 350,
+    "streakDays": 4,
+    "lessonsCompleted": 5,
+    "hoursLearned": 2.25,
+    "currentMilestoneIndex": 1
+  },
+  "progressOverview": {
+    "overallPercentage": 25,
+    "totalMilestones": 5,
+    "completedMilestones": 1,
+    "inProgressMilestones": 1,
+    "lockedMilestones": 3
+  },
+  "activeMilestone": {
+    "id": "py-m2",
+    "title": "Functions, Scopes, Closures & Decorators",
+    "completedLessons": 1,
+    "totalLessons": 4,
+    "milestonePercentage": 25
+  }
+}

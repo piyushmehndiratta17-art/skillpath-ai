@@ -1,0 +1,90 @@
+{
+  "assessmentId": "assessment-1729750000000",
+  "skill": "python",
+  "totalQuestions": 10,
+  "attemptedCount": 9,
+  "unansweredCount": 1,
+  "correctCount": 7,
+  "incorrectCount": 2,
+  "scorePercentage": 70,
+  "estimatedProficiency": "intermediate",
+  "weakTopics": [
+    "Functions & Scope",
+    "OOP & Dunder Methods"
+  ],
+  "strongTopics": [
+    "Variables & Mutability",
+    "Control Flow & Comprehensions",
+    "Data Structures",
+    "Error Handling & Contexts",
+    "Generics & Iterators",
+    "Concurrency & GIL"
+  ],
+  "topicBreakdown": {
+    "Variables & Mutability": {
+      "topic": "Variables & Mutability",
+      "totalQuestions": 1,
+      "attemptedCount": 1,
+      "correctCount": 1,
+      "accuracyPercentage": 100,
+      "status": "mastered"
+    },
+    "Functions & Scope": {
+      "topic": "Functions & Scope",
+      "totalQuestions": 2,
+      "attemptedCount": 2,
+      "correctCount": 1,
+      "accuracyPercentage": 50,
+      "status": "needs_review"
+    },
+    "OOP & Dunder Methods": {
+      "topic": "OOP & Dunder Methods",
+      "totalQuestions": 2,
+      "attemptedCount": 1,
+      "correctCount": 1,
+      "accuracyPercentage": 50,
+      "status": "needs_review"
+    }
+  },
+  "detailedFeedback": [
+    {
+      "questionId": "py-q1",
+      "prompt": "What will this Python program print?",
+      "topic": "Variables & Mutability",
+      "difficulty": "beginner",
+      "selectedOptionId": "b",
+      "correctOptionId": "b",
+      "isCorrect": true,
+      "wasAttempted": true,
+      "explanation": "In Python, variables reference objects. b = a assigns the reference; appending to b alters the same underlying list object referenced by a.",
+      "conceptTested": "Python object references and mutability of lists."
+    },
+    {
+      "questionId": "py-q8",
+      "prompt": "Which keyword allows re-binding a variable from an enclosing outer function scope that is not global?",
+      "topic": "Functions & Scope",
+      "difficulty": "advanced",
+      "selectedOptionId": "a",
+      "correctOptionId": "b",
+      "isCorrect": false,
+      "wasAttempted": true,
+      "explanation": "nonlocal declares that an identifier refers to a variable in the nearest enclosing non-global scope, enabling assignment.",
+      "conceptTested": "Python LEGB scope resolution and nonlocal bindings."
+    },
+    {
+      "questionId": "py-q10",
+      "prompt": "What is the syntax @my_decorator placed above def greet(): syntactic sugar for?",
+      "topic": "OOP & Dunder Methods",
+      "difficulty": "intermediate",
+      "selectedOptionId": null,
+      "correctOptionId": "b",
+      "isCorrect": false,
+      "wasAttempted": false,
+      "explanation": "Function decorators pass the decorated function to the decorator callable and re-bind the function name to the return value.",
+      "conceptTested": "Decorator mechanics and higher-order functions in Python."
+    }
+  ],
+  "summaryMessage": "Solid foundation! You scored 70% (7/10) in python. You are at an intermediate level.",
+  "recommendedNextAction": "Target your weak areas to unlock advanced topics: Functions & Scope, OOP & Dunder Methods.",
+  "timestamp": "2026-10-24T06:30:00.000Z"
+}

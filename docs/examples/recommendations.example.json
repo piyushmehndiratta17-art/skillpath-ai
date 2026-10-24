@@ -1,0 +1,26 @@
+{
+  "recommendation": {
+    "milestone": {
+      "id": "py-m2",
+      "order": 2,
+      "title": "Functions, Scopes, Closures & Decorators",
+      "status": "in_progress"
+    },
+    "lesson": {
+      "id": "py-l2-2",
+      "title": "🎯 LEGB Scopes, Closures & Nonlocal State",
+      "durationMinutes": 30,
+      "type": "reading",
+      "completed": false
+    },
+    "reason": "High-Priority Review: This lesson reinforces your identified growth topic in \"Functions & Scope\".",
+    "isWeakTopicReinforcement": true,
+    "estimatedMinutes": 30,
+    "progressContext": {
+      "milestoneIndex": 2,
+      "totalMilestones": 5,
+      "lessonIndex": 2,
+      "totalLessonsInMilestone": 4
+    }
+  }
+}

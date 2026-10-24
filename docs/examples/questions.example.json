@@ -1,0 +1,69 @@
+[
+  {
+    "id": "js-q1",
+    "skill": "javascript",
+    "topic": "Scope & Closures",
+    "difficulty": "beginner",
+    "prompt": "What will the following code output to the console?",
+    "codeSnippet": "function outer() {\n  let count = 0;\n  return function inner() {\n    count++;\n    return count;\n  };\n}\nconst counter = outer();\ncounter();\nconsole.log(counter());",
+    "options": [
+      { "id": "a", "text": "1" },
+      { "id": "b", "text": "2" },
+      { "id": "c", "text": "undefined" },
+      { "id": "d", "text": "ReferenceError" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The inner function retains lexical access to count through a closure. The first invocation increments count to 1, and the second increments it to 2.",
+    "conceptTested": "Lexical scoping and closure state retention in JavaScript."
+  },
+  {
+    "id": "py-q1",
+    "skill": "python",
+    "topic": "Variables & Mutability",
+    "difficulty": "beginner",
+    "prompt": "What will this Python program print?",
+    "codeSnippet": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(len(a))",
+    "options": [
+      { "id": "a", "text": "3" },
+      { "id": "b", "text": "4" },
+      { "id": "c", "text": "1" },
+      { "id": "d", "text": "TypeError" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "In Python, variables reference objects. b = a assigns the reference; appending to b alters the same underlying list object referenced by a.",
+    "conceptTested": "Python object references and mutability of lists."
+  },
+  {
+    "id": "java-q1",
+    "skill": "java",
+    "topic": "Types & Equality",
+    "difficulty": "beginner",
+    "prompt": "What will the following Java snippet print?",
+    "codeSnippet": "String s1 = new String(\"SkillPath\");\nString s2 = new String(\"SkillPath\");\nSystem.out.println((s1 == s2) + \" \" + s1.equals(s2));",
+    "options": [
+      { "id": "a", "text": "true true" },
+      { "id": "b", "text": "false false" },
+      { "id": "c", "text": "false true" },
+      { "id": "d", "text": "true false" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "== compares object reference memory locations on the heap, whereas equals() compares character sequence contents.",
+    "conceptTested": "Reference identity vs object value equality in Java."
+  },
+  {
+    "id": "dsa-q3",
+    "skill": "dsa",
+    "topic": "Linked Lists",
+    "difficulty": "intermediate",
+    "prompt": "Which algorithm detects whether a singly linked list contains a cycle using O(N) time and O(1) extra space?",
+    "options": [
+      { "id": "a", "text": "Floyd’s Tortoise and Hare (Two Pointers)" },
+      { "id": "b", "text": "Dijkstra’s Shortest Path Algorithm" },
+      { "id": "c", "text": "Kadane’s Maximum Subarray Algorithm" },
+      { "id": "d", "text": "Kruskal’s Minimum Spanning Tree" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Floyd's algorithm advances a slow pointer by 1 step and a fast pointer by 2 steps; if a cycle exists, they must intersect in O(N) time with O(1) space.",
+    "conceptTested": "Fast and slow two-pointer techniques on linked lists."
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "skill": "Python",
+  "proficiency": "intermediate",
+  "goal": "Build automated data pipelines and backend web microservices",
+  "dailyMinutes": 30,
+  "totalEstimatedHours": 25,
+  "estimatedWeeksToComplete": 10,
+  "weakTopicsTargeted": [
+    "Functions & Scope",
+    "OOP & Dunder Methods"
+  ],
+  "roadmap": {
+    "id": "roadmap-1729750000000",
+    "skill": "Python",
+    "level": "intermediate",
+    "totalEstimatedHours": 25,
+    "milestones": [
+      {
+        "id": "py-m1",
+        "order": 1,
+        "title": "Python Core Mechanics, Types & Execution",
+        "description": "Master the Python runtime, interpreter mechanics, data mutability, control structures, and clean idiomatic Python 3 syntax.",
+        "estimatedHours": 4,
+        "status": "completed",
+        "xpReward": 150,
+        "lessons": [
+          { "id": "py-l1-1", "title": "Python Memory Model: References, Identity & Mutability", "durationMinutes": 25, "type": "reading", "completed": true },
+          { "id": "py-l1-2", "title": "Sequences & Collections: Lists, Tuples, Dictionaries & Sets", "durationMinutes": 30, "type": "reading", "completed": true },
+          { "id": "py-l1-3", "title": "Idiomatic Control Flow & List Comprehensions", "durationMinutes": 25, "type": "reading", "completed": true },
+          { "id": "py-l1-4", "title": "Core Types & Execution Checkpoint", "durationMinutes": 15, "type": "quiz", "completed": true }
+        ]
+      },
+      {
+        "id": "py-m2",
+        "order": 2,
+        "title": "Functions, Scopes, Closures & Decorators",
+        "description": "Explore first-class functions, args/kwargs unpacking, LEGB scoping rules, closures, and metaprogramming with decorators. [Reinforced focus on your identified growth areas]",
+        "estimatedHours": 5,
+        "status": "in_progress",
+        "xpReward": 250,
+        "lessons": [
+          { "id": "py-l2-1", "title": "🎯 Function Signatures: Positional-Only, Keyword-Only & Variadics", "durationMinutes": 25, "type": "reading", "completed": false },
+          { "id": "py-l2-2", "title": "🎯 LEGB Scopes, Closures & Nonlocal State", "durationMinutes": 30, "type": "reading", "completed": false },
+          { "id": "py-l2-3", "title": "Metaprogramming with Python Decorators", "durationMinutes": 35, "type": "video", "completed": false },
+          { "id": "py-l2-4", "title": "Functions & Decorators Quiz", "durationMinutes": 15, "type": "quiz", "completed": false }
+        ]
+      },
+      {
+        "id": "py-m3",
+        "order": 3,
+        "title": "Object-Oriented Python, Dunder Protocols & Error Handling",
+        "description": "Design robust object hierarchies, implement Python data model special methods, and build custom exception hierarchies. [Reinforced focus on your identified growth areas]",
+        "estimatedHours": 5,
+        "status": "locked",
+        "xpReward": 300,
+        "lessons": [
+          { "id": "py-l3-1", "title": "🎯 Classes, Dunder Methods & The Python Data Model", "durationMinutes": 35, "type": "reading", "completed": false },
+          { "id": "py-l3-2", "title": "Inheritance, Multiple Inheritance & Method Resolution Order (MRO)", "durationMinutes": 30, "type": "reading", "completed": false },
+          { "id": "py-l3-3", "title": "Exception Hierarchies & Context Managers", "durationMinutes": 25, "type": "reading", "completed": false },
+          { "id": "py-l3-4", "title": "Python OOP & Protocols Checkpoint", "durationMinutes": 15, "type": "quiz", "completed": false }
+        ]
+      }
+    ]
+  },
+  "extendedMetadata": {
+    "prerequisites": {
+      "py-m2": ["py-m1"],
+      "py-m3": ["py-m2"]
+    },
+    "practiceTask": {
+      "id": "py-pt-2",
+      "title": "Timing & Rate-Limiter Decorators",
+      "description": "Implement a @timeit decorator for benchmarking and a @rate_limit(max_calls, period_sec) decorator.",
+      "hints": ["Store call timestamps in a list or deque", "Use time.perf_counter() for timing"]
+    },
+    "checkpointQuiz": {
+      "id": "py-cq-2",
+      "title": "Python Functions & Decorators Checkpoint",
+      "questionCount": 5,
+      "passingPercentage": 75,
+      "topicsCovered": ["LEGB Scoping", "Decorators", "functools.wraps"]
+    }
+  }
+}
