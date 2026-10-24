@@ -3,53 +3,49 @@
 > **"Your next step is always clear."**
 
 An AI-powered personalized learning platform for students and self-learners.  
-Built as a hackathon project — Stage 1 ships the complete frontend foundation with sample data.
+Built for the hackathon — Member 1 has implemented the complete frontend, interactive user experience, diagnostic assessment wizard, and integration readiness.
 
 ---
 
-## ✨ Features (Stage 1)
+## ✨ Features
 
-| Page | What it does |
-|------|-------------|
-| **Landing** `/` | Hero, feature highlights, how-it-works, testimonials, CTA |
-| **Onboarding** `/onboarding` | Skill, level, goal & time form with validation |
-| **Dashboard** `/dashboard` | Progress overview, stats, roadmap milestones, next-action |
-| **Lesson** `/lesson` | Sample lesson content, code blocks, completion flow |
+| Page | Route | What it does |
+|------|-------|-------------|
+| **Landing** | `/` | Hero, feature highlights, how-it-works, testimonials, fast CTAs |
+| **Onboarding** | `/onboarding` | Skill, level, goal & daily study time form with validation |
+| **Diagnostic Assessment** | `/assessment` | 5-step wizard with skill selection, goals, proficiency, interactive diagnostic quiz, instant readiness score, and identified weak topics breakdown |
+| **Dashboard** | `/dashboard` | Learner profile, goal overview, overall progress, Continue Learning hero, daily quests, weekly heatmap, XP/streak stats, badges showcase, reusable roadmap view, and recent activity timeline |
+| **Interactive Lesson** | `/lesson` | Learning objectives, concept explanations, formatted code snippets with copy button & output preview, interactive practice questions with instant explanation/hint feedback, and "Mark as Complete" progression flow with XP/badge awarding |
 
-- ✅ Personalized Python learning roadmap (5 milestones)
-- ✅ Locked / available / in-progress / completed milestone states
-- ✅ XP, streak, and lesson-count stats
-- ✅ localStorage persistence (refresh-safe)
-- ✅ Fully responsive (mobile + desktop)
-- ✅ No authentication, no database, no API keys required
+### Key Capabilities
+- ✅ **Personalized Python & Multi-Skill Curriculum**: 5 modular milestones with sequential prerequisites.
+- ✅ **Diagnostic Assessment Engine Readiness**: Interactive assessment with multiple-choice questions, scored readiness percent, strengths identification, and prioritized weak topic recommendations.
+- ✅ **Full Progression & Gamification**: XP earning, day streaks, daily tasks checklist, weekly study minutes tracker, and unlockable achievement badges.
+- ✅ **Client-side Persistence**: Full localStorage state management (`lib/progress.ts`) with zero sensitive data or secrets stored.
+- ✅ **Reusable Roadmap Component**: `RoadmapView` with module accordions, lesson status indicators, prerequisites, and "Up Next" spotlights.
+- ✅ **Member 2 Integration Ready**: Documented data contracts in `docs/data-interfaces.md` and decoupled scoring adapter in `lib/assessment.ts`.
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-- **Node.js 18+** — download from [nodejs.org](https://nodejs.org)
-- **npm** (comes with Node.js)
+- **Node.js 18+**
+- **npm** (bundled with Node.js)
 
 ### Setup & Run
-
 ```bash
-# 1. Navigate to the project directory
-cd skillpath-ai
-
-# 2. Install dependencies
+# 1. Install dependencies
 npm install
 
-# 3. Start the development server
+# 2. Start the local development server
 npm run dev
 
-# 4. Open in browser
-open http://localhost:3000
+# 3. Open in browser
+http://localhost:3000
 ```
 
 ### Production Build
-
 ```bash
 npm run build
 npm run start
@@ -62,90 +58,59 @@ npm run start
 ```
 skillpath-ai/
 ├── app/
-│   ├── layout.tsx          # Root layout with font & metadata
-│   ├── globals.css         # Tailwind directives + design utilities
-│   ├── page.tsx            # Landing page
+│   ├── layout.tsx          # Root layout with Inter font & metadata
+│   ├── globals.css         # Tailwind directives + design system tokens
+│   ├── page.tsx            # Marketing landing page with assessment & onboarding CTAs
 │   ├── onboarding/
-│   │   └── page.tsx        # Onboarding form page
+│   │   └── page.tsx        # Quick start onboarding form
+│   ├── assessment/
+│   │   └── page.tsx        # 5-step diagnostic assessment & weak topics wizard
 │   ├── dashboard/
-│   │   └── page.tsx        # Learner dashboard
+│   │   └── page.tsx        # Complete learner dashboard with profile, stats, tabs & feed
 │   └── lesson/
-│       └── page.tsx        # Placeholder lesson page
+│       └── page.tsx        # Interactive lesson screen with code, quiz & completion
 │
 ├── components/
-│   ├── Navbar.tsx          # Sticky navigation
-│   ├── Footer.tsx          # Professional footer
+│   ├── Navbar.tsx          # Responsive sticky navigation with dashboard & assessment links
+│   ├── Footer.tsx          # Hackathon footer
 │   ├── OnboardingForm.tsx  # Multi-field form with validation
-│   ├── MilestoneCard.tsx   # Roadmap milestone with status states
-│   ├── StatCard.tsx        # XP / streak / lesson stat widget
-│   └── ProgressBar.tsx     # Accessible progress bar
+│   ├── MilestoneCard.tsx   # Legacy single milestone card component
+│   ├── StatCard.tsx        # Reusable metric card (XP, Streak, Lessons)
+│   ├── ProgressBar.tsx     # Accessible progress bar
+│   ├── roadmap/
+│   │   └── RoadmapView.tsx # Reusable curriculum roadmap component with lesson details
+│   └── dashboard/
+│       ├── LearnerProfileCard.tsx  # Profile header with active target & level
+│       ├── DailyTasksWidget.tsx    # Daily quests with XP incentives
+│       ├── WeeklyActivityWidget.tsx# 7-day study time heatmap
+│       ├── BadgesWidget.tsx        # Achievement badges in unlocked/locked states
+│       └── RecentActivityWidget.tsx# Study event timeline
+│
+├── docs/
+│   └── data-interfaces.md  # Shared JSON data contracts & integration instructions for Member 2
 │
 ├── lib/
-│   ├── types.ts            # TypeScript interfaces
-│   ├── mock-data.ts        # Sample Python roadmap + feature data
-│   ├── progress.ts         # localStorage persistence + calculations
-│   └── utils.ts            # cn() className utility
+│   ├── types.ts            # TypeScript definitions (Profile, Roadmap, Assessment, Gamification)
+│   ├── mock-data.ts        # Curriculum milestones, diagnostic questions, & detailed lessons
+│   ├── assessment.ts       # Decoupled assessment evaluation adapter for Member 2
+│   ├── progress.ts         # localStorage persistence, lesson completion engine, & calculations
+│   └── utils.ts            # cn() class utility
 │
-├── tailwind.config.js      # Brand color palette + design tokens
-├── next.config.js
-├── tsconfig.json
+├── tailwind.config.js      # Brand colors, typography, and shadow tokens
 └── package.json
 ```
 
 ---
 
-## 🎨 Design System
+## 🤝 Integration Instructions for Member 2
 
-| Token | Value |
-|-------|-------|
-| Background | `#faf9f6` (warm off-white) |
-| Primary text | Navy (`#1e2d4a`) |
-| Accent | Violet-600 (`#7c3aed`) |
-| Border radius | `rounded-2xl` (1rem) |
-| Card shadow | `0 1px 3px rgba(0,0,0,0.06)` |
+1. **Diagnostic Scoring Engine:**
+   - Plug your algorithmic or ML diagnostic evaluator directly into `evaluateAssessment` in `lib/assessment.ts` (or point it to an API route `POST /api/assessment/evaluate`).
+   - The UI automatically renders your evaluated level, score, strengths, and weak topics without needing UI changes.
 
----
-
-## 🗺 Roadmap
-
-### Stage 1 (current) — Frontend Foundation
-- [x] Landing page with full marketing sections
-- [x] Onboarding form with validation
-- [x] Dashboard with roadmap milestones
-- [x] Lesson placeholder page
-- [x] localStorage persistence
-
-### Stage 2 — AI Integration
-- [ ] Gemini API for roadmap generation
-- [ ] AI-powered lesson content
-- [ ] Quiz with adaptive feedback
-- [ ] Personalized difficulty adjustment
-
-### Stage 3 — Advanced Features
-- [ ] User accounts & cloud sync
-- [ ] Spaced repetition reminders
-- [ ] Progress analytics
-- [ ] Community features
-
----
-
-## 🛠 Tech Stack
-
-- **Next.js 14** (App Router)
-- **React 18**
-- **TypeScript 5**
-- **Tailwind CSS 3**
-- **Lucide React** (icons)
-- **No external state management** — React `useState` + localStorage
-
----
-
-## 📝 Notes for Judges
-
-- Stage 1 uses **entirely static/sample data** — no AI API calls
-- The codebase is **structured for easy Gemini integration** in Stage 2
-- All components are **reusable and typed** — ready to wire up to real data
-- localStorage is accessed **only on the client** (SSR-safe)
+2. **Personalized Roadmap Generator:**
+   - Plug your roadmap generation engine into `generateRoadmap` in `lib/mock-data.ts` (or point to `POST /api/roadmap/generate`).
+   - The UI consumes the `Roadmap` and `Milestone` schemas documented in `docs/data-interfaces.md`.
 
 ---
 

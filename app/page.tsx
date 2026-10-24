@@ -131,11 +131,17 @@ export default function LandingPage() {
               Start Learning Free
               <ArrowRight className="w-4 h-4" />
             </Link>
+            <Link
+              href="/assessment"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white border border-brand-200 text-brand-700 font-bold text-base hover:border-brand-400 hover:bg-brand-50 transition-all shadow-sm"
+            >
+              Take Skill Assessment
+            </Link>
             <a
               href="#how-it-works"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white border border-slate-200 text-navy-700 font-semibold text-base hover:border-brand-300 hover:bg-slate-50 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-transparent border border-slate-200 text-navy-700 font-semibold text-base hover:border-brand-300 hover:bg-slate-50 transition-all"
             >
-              See how it works
+              How it works
             </a>
           </div>
 
